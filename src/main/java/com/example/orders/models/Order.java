@@ -20,6 +20,7 @@ public class Order {
 
     @ManyToOne
     @JoinColumn(name = "custcode", nullable = false)
+    @JsonIgnoreProperties("orders")
     private Customer customer;
 
     @ManyToMany
@@ -31,7 +32,7 @@ public class Order {
     {
     }
 
-    public Order(double ordamount, double advanceamount, String orderdescription, Customer customer)
+    public Order(double ordamount, double advanceamount, Customer customer, String orderdescription)
     {
         this.ordamount = ordamount;
         this.advanceamount = advanceamount;
