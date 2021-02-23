@@ -2,6 +2,10 @@ package com.example.orders.services;
 
 import com.example.orders.models.Customer;
 
-public interface CustomerService {
+import java.util.List;
+
+public interface CustomerService
+{
+    List<Customer> findAllOrders();
     Customer save(Customer customer);
 }
